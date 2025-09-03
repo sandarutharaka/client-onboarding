@@ -18,7 +18,7 @@ export default function Home() {
     ? serviceParams
         .split(",")
         .filter((s): s is (typeof servicesOptions)[number] =>
-          servicesOptions.includes(s as any)
+          servicesOptions.includes(s as typeof servicesOptions[number])
         )
     : [];
 
@@ -71,7 +71,7 @@ export default function Home() {
         throw new Error(`Request failed with status ${res.status}`);
       }
 
-      const result = await res.json();
+      await res.json();
       setSuccessMessage(
         `Form submitted successfully! 🎉
 Full Name: ${data.fullName}
@@ -84,10 +84,12 @@ Accepted Terms: ${data.acceptTerms ? "Yes" : "No"}`
       );
 
       reset();
-    } catch (error: any) {
-      setErrorMessage(
-        error.message || "Failed to submit form. Please try again."
-      );
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Failed to submit form. Please try again.";
+      setErrorMessage(message);
     }
   };
 

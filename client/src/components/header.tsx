@@ -10,10 +10,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import logo from "../assets/logo.png";
 
 const Header = () => {
-  const [showBanner, setShowBanner] = useState(true);
 
   return (
     <header className="w-full  bg-gray-200 z-40 mb-5 border-b-2 border-gray-200">
