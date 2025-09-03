@@ -60,8 +60,8 @@ export default function Home() {
     try {
       setSuccessMessage(null);
       setErrorMessage(null);
-
-      const res = await fetch(process.env.NEXT_PUBLIC_ONBOARD_URL as string, {
+      const baseUrl = process.env.NEXT_PUBLIC_ONBOARD_URL;
+      const res = await fetch(`${baseUrl}/api/onboard` as string, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
