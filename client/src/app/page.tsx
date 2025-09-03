@@ -1,12 +1,11 @@
 "use client";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { formSchema, FormData, servicesOptions } from "./lib/formSchema";
+import { formSchema, FormData, servicesOptions } from "../lib/formSchema";
 import Header from "@/components/header";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-
 
 export default function Home() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -23,7 +22,7 @@ export default function Home() {
         )
     : [];
 
-    // Use Form with zod
+  // Use Form with zod
   const {
     register,
     handleSubmit,
@@ -44,19 +43,19 @@ export default function Home() {
       acceptTerms: false,
     },
   });
- 
+
   const services = useWatch({ control, name: "services" });
 
   useEffect(() => {
-  if (services.length > 0) {
-    const queryString = services.map(encodeURIComponent).join(",");
-    router.replace(`/?service=${queryString}`);
-  } else {
-    router.replace(`/`);
-  }
-}, [services, router]);
+    if (services.length > 0) {
+      const queryString = services.map(encodeURIComponent).join(",");
+      router.replace(`/?service=${queryString}`);
+    } else {
+      router.replace(`/`);
+    }
+  }, [services, router]);
 
-// onsubmit
+  // onsubmit
   const onSubmit = async (data: FormData) => {
     try {
       setSuccessMessage(null);
@@ -74,7 +73,14 @@ export default function Home() {
 
       const result = await res.json();
       setSuccessMessage(
-        `Form submitted successfully! 🎉 Name: ${result.data.fullName}, Email: ${result.data.email}`
+        `Form submitted successfully! 🎉
+Full Name: ${data.fullName}
+Email: ${data.email}
+Company: ${data.companyName}
+Services: ${data.services.join(", ")}
+Budget: ${data.budget || "N/A"}
+Project Start Date: ${data.projectStartDate}
+Accepted Terms: ${data.acceptTerms ? "Yes" : "No"}`
       );
 
       reset();
@@ -119,7 +125,7 @@ export default function Home() {
 
               {/* Messages */}
               {successMessage && (
-                <div className="mb-4 p-3 rounded-lg bg-green-100 text-green-700 border border-green-400">
+                <div className="mb-4 p-3 rounded-lg bg-green-100 text-green-700 border border-green-400 whitespace-pre-line">
                   {successMessage}
                 </div>
               )}
