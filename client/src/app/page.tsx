@@ -1,4 +1,6 @@
 "use client";
+export const dynamic = "force-dynamic";
+
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema, FormData, servicesOptions } from "../lib/formSchema";
@@ -10,6 +12,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  
   const router = useRouter();
 
   const searchParams = useSearchParams();
