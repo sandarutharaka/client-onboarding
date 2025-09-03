@@ -2,7 +2,7 @@
 
 A **Client Onboarding Form** built with **Next.js (App Router)**, **React Hook Form**, **Zod**, and **Tailwind CSS** for the frontend, and a lightweight **Express.js backend** for handling submissions.
 
-🔗 **Live Demo (Frontend on Netlify):** [https://your-netlify-demo-link.netlify.app](https://your-netlify-demo-link.netlify.app)
+🔗 **Live Demo (Frontend on Vercel):** [https://client-onboarding-hz5m.vercel.app/](https://client-onboarding-hz5m.vercel.app/)
 
 The form validates user inputs, persists values on errors, updates the URL query param when services are selected, and submits the data to a backend API (deployed on Render).
 
@@ -79,7 +79,7 @@ client-onboarding-form/
   - CORS + JSON middleware
 
 - **Deployment**
-  - Frontend → **Netlify**
+  - Frontend → **Vercel**
   - Backend → **Render**
 
 ---
@@ -88,7 +88,7 @@ client-onboarding-form/
 
 1. **Clone the repository**
 
-git clone https://github.com/yourusername/client-onboarding-form.git
+git clone https://github.com/sandarutharaka/client-onboarding.git
 cd client-onboarding-form
 `
 
@@ -136,16 +136,16 @@ This ensures clear feedback for the user at every step.
 
 ## 🌍 Deployment Notes
 
-- **Frontend (Netlify)**
+- **Frontend (V)**
 
-  - Connect the `client/` folder to Netlify.
-  - Make sure environment variables (e.g. `NEXT_PUBLIC_ONBOARD_URL`) are set in Netlify dashboard to point to the Render API.
+  - Connect the `client/` folder to Vercel.
+  - Make sure environment variables (e.g. `NEXT_PUBLIC_ONBOARD_URL`) are set in Vercel dashboard to point to the Render API.
 
 - **Backend (Render)**
 
   - Deploy the `server/` folder as a Node.js web service.
   - Expose `/api/onboard` endpoint.
-  - Update the frontend `.env.local` (and Netlify settings) with the live Render URL.
+  - Update the frontend `.env.local` (and Vercel settings) with the live Render URL.
 
 ---
 
@@ -154,8 +154,8 @@ This ensures clear feedback for the user at every step.
 - ✅ Fully functional **client onboarding form** with validation and nice UX
 - ✅ **Frontend:** Next.js + React Hook Form + Zod + Tailwind
 - ✅ **Backend:** Express.js REST API
-- ✅ **Deployments:** Netlify (frontend) + Render (backend)
+- ✅ **Deployments:** Vercel (frontend) + Render (backend)
 - ✅ Success & error handling with banners
 - ✅ Dynamic query params for services
 
-🔗 **Live Demo (Frontend):** [https://your-netlify-demo-link.netlify.app](https://your-netlify-demo-link.netlify.app)
+🔗 **Live Demo (Frontend):** [https://client-onboarding-hz5m.vercel.app/](https://https://client-onboarding-hz5m.vercel.app/)

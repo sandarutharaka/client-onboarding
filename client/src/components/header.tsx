@@ -20,7 +20,7 @@ const Header = () => {
       <div className="w-full px-5 md:px-5 max-w-screen-xl mx-auto py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center pr-[120px] md:pr-[20px]">
-          <span className="text-sm lg:text-lg font-extrabold italic text-primary ml-[-4px] mt-[-4px] lg:ml-[-8px] lg:mt-[-5px]">
+          <span className="text-sm text-blue-600 lg:text-lg font-extrabold italic ml-[-4px] mt-[-4px] lg:ml-[-8px] lg:mt-[-5px]">
             Besta.App
           </span>
         </div>
@@ -32,12 +32,12 @@ const Header = () => {
           <a href="#">Services</a>
         </nav>
         <div className=" gap-5 hidden md:flex">
-          <Button className="text-[#171717] bg-transparent w-[100px] md:w-[90px] lg:w-[100px] h-[40px] md:h-[35px] lg:h-[40px] rounded-4xl font-semibold">
+          <Button variant="outline" className="text-[#171717] bg-transparent w-[100px] md:w-[90px] lg:w-[100px] h-[40px] md:h-[35px] lg:h-[40px] rounded-4xl font-semibold border-blue-600">
             Get A Quote
           </Button>
           <Button
             variant="outline"
-            className="text-black w-[100px] md:w-[90px] lg:w-[100px] h-[40px] md:h-[35px] lg:h-[40px] rounded-4xl font-semibold border-1 bg-transparent "
+            className="text-black w-[100px] md:w-[90px] lg:w-[100px] h-[40px] md:h-[35px] lg:h-[40px] rounded-4xl font-semibold border-1 bg-transparent border-blue-600"
           >
             Sign in
           </Button>
@@ -56,7 +56,7 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent side="left" className="px-4">
             <SheetHeader className="flex flex-col items-start px-0">
-              <SheetTitle className="text-2xl  font-bold text-primary text-start flex items-center  ">
+              <SheetTitle className="text-2xl  font-bold text-blue-600 text-start flex items-center  ">
                 <span className="ml-[-15px] mt-[-5px]">Besta.App</span>
               </SheetTitle>
             </SheetHeader>
@@ -67,7 +67,7 @@ const Header = () => {
               <a href="#">Home</a>
               <a href="#">Blog</a>
               <a href="#">Pages</a>
-              <a href="#">Tracking</a>
+              <a href="#">Projects</a>
               <a href="#">Services</a>
             </nav>
             <div className=""></div>
